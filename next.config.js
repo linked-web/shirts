@@ -9,7 +9,7 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/cart/',
-				destination: 'http://localhost:8000/api/cart/',
+				destination: 'http://stormy-stream-28511.herokuapp.com/api/cart/',
 			},
 		];
 	},

@@ -10,11 +10,8 @@ const CheckoutPage: NextPage = () => {
 	const { cart } = useCart();
 
 	if (
-		!loading &&
-		!isAuthenticated &&
-		cart !== null &&
-		cart !== undefined &&
-		cart.length <= 0
+		(!loading && !isAuthenticated) ||
+		(cart !== null && cart !== undefined && cart.length <= 0)
 	)
 		router.push('/login');
 
