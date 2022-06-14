@@ -4,7 +4,7 @@ const nextConfig = {
 	images: {
 		domains: ['localhost', 'stormy-stream-28511.herokuapp.com'],
 	},
-	trailingSlash: true,
+	// trailingSlash: true,
 	// async rewrites() {
 	// 	return [
 	// 		{

@@ -48,45 +48,8 @@ export default async function handler(
 				error: 'Something went wrong when retrieving orders',
 			});
 		}
-	} else if (req.method === 'POST') {
-		const { access } = cookie.parse(req.headers.cookie ?? '');
-
-		if (!access) {
-			return res.status(401).json({
-				error: 'User unauthorized to make this request',
-			});
-		}
-
-		try {
-			const apiRes = await fetch(`${API_URL}/api/orders/create`, {
-				method: 'POST',
-				headers: {
-					Accept: 'application/json',
-					Authorization: `Bearer ${access}`,
-				},
-				credentials: 'include',
-				mode: 'cors',
-			});
-
-			const data = await apiRes.json();
-
-			if (apiRes.status === 201) {
-				return res.status(201).json({
-					order: data.order,
-				});
-			} else {
-				return res.status(apiRes.status).json({
-					error: 'Failed to create order',
-				});
-			}
-		} catch (err) {
-			console.log(err);
-			return res.status(500).json({
-				error: 'Something went wrong when creatig order',
-			});
-		}
 	} else {
-		res.setHeader('Allow', ['GET', 'POST']);
+		res.setHeader('Allow', ['GET']);
 		return res.status(405).json({ error: `Method ${req.method} not allowed` });
 	}
 }

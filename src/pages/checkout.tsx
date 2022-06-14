@@ -28,7 +28,7 @@ const CheckoutPage: NextPage = () => {
 	};
 
 	const buy = async () => {
-		const res = await fetch('/api/orders/', {
+		const res = await fetch('/api/orders/create', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',

@@ -15,7 +15,7 @@ const DashboardPage: NextPage = () => {
 	useEffect(() => {
 		const fetchOrders = async () => {
 			try {
-				const res = await fetch('/api/orders/', {
+				const res = await fetch('/api/orders/list', {
 					method: 'GET',
 					headers: {
 						Accept: 'application/json',

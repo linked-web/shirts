@@ -93,7 +93,7 @@ export const CartProvider: FC<Props> = ({ children }) => {
 
 	const getCart = async () => {
 		try {
-			const res = await fetch(`${API_URL}/api/cart/`, {
+			const res = await fetch(`${API_URL}/api/cart/list`, {
 				method: 'GET',
 				headers: {
 					Accept: 'application/json',
@@ -123,7 +123,7 @@ export const CartProvider: FC<Props> = ({ children }) => {
 		console.log('Amount: ', amount);
 
 		try {
-			const res = await fetch(`${API_URL}/api/cart/`, {
+			const res = await fetch(`${API_URL}/api/cart/update`, {
 				method: 'POST',
 				headers: {
 					Accept: 'application/json',
@@ -153,7 +153,7 @@ export const CartProvider: FC<Props> = ({ children }) => {
 		const body = JSON.stringify({ product_id });
 
 		try {
-			const res = await fetch(`${API_URL}/api/cart/`, {
+			const res = await fetch(`${API_URL}/api/cart/delete`, {
 				method: 'DELETE',
 				headers: {
 					Accept: 'application/json',
