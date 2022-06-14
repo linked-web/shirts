@@ -29,6 +29,7 @@ export default async function handler(
 					Accept: 'application/json',
 					Authorization: `Bearer ${access}`,
 				},
+				mode: 'cors',
 			});
 
 			const data = await apiRes.json();
@@ -64,6 +65,7 @@ export default async function handler(
 					Authorization: `Bearer ${access}`,
 				},
 				credentials: 'include',
+				mode: 'cors',
 			});
 
 			const data = await apiRes.json();

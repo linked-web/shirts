@@ -116,6 +116,8 @@ export const CartProvider: FC<Props> = ({ children }) => {
 
 	const updateCart = async (product_id: number, amount: number) => {
 		const body = JSON.stringify({ product_id, amount });
+		console.log('Product ID: ', product_id);
+		console.log('Amount: ', amount);
 
 		try {
 			const res = await fetch('/api/cart/', {

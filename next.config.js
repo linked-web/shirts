@@ -2,7 +2,7 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		domains: ['localhost'],
+		domains: ['localhost', 'stormy-stream-28511.herokuapp.com'],
 	},
 	trailingSlash: true,
 	async rewrites() {

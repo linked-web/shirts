@@ -36,6 +36,7 @@ const CheckoutPage: NextPage = () => {
 			headers: {
 				Accept: 'application/json',
 			},
+			credentials: 'include',
 		});
 
 		if (res.status === 201) {
