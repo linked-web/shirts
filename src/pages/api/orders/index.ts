@@ -49,7 +49,7 @@ export default async function handler(
 			});
 		}
 	} else if (req.method === 'POST') {
-		const { access } = cookie.parse(req.headers.cookie ?? '');
+		const { access, sessionid } = cookie.parse(req.headers.cookie ?? '');
 
 		if (!access) {
 			return res.status(401).json({
@@ -63,7 +63,7 @@ export default async function handler(
 				headers: {
 					Accept: 'application/json',
 					Authorization: `Bearer ${access}`,
-					Cookie: req.headers.cookie ?? '',
+					Cookie: sessionid,
 				},
 				credentials: 'include',
 				mode: 'cors',
