@@ -5,14 +5,14 @@ const nextConfig = {
 		domains: ['localhost', 'stormy-stream-28511.herokuapp.com'],
 	},
 	trailingSlash: true,
-	async rewrites() {
-		return [
-			{
-				source: '/api/cart/',
-				destination: 'http://stormy-stream-28511.herokuapp.com/api/cart/',
-			},
-		];
-	},
+	// async rewrites() {
+	// 	return [
+	// 		{
+	// 			source: '/api/cart/',
+	// 			destination: 'http://stormy-stream-28511.herokuapp.com/api/cart/',
+	// 		},
+	// 	];
+	// },
 };
 
 module.exports = nextConfig;

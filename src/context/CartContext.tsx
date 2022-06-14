@@ -7,6 +7,7 @@ import {
 	ReactNode,
 } from 'react';
 import { Cart, CartItem } from '@customTypes/cart';
+import { API_URL } from '@config/index';
 
 interface StateModifiers {
 	getCart: () => Promise<void>;
@@ -92,11 +93,13 @@ export const CartProvider: FC<Props> = ({ children }) => {
 
 	const getCart = async () => {
 		try {
-			const res = await fetch('/api/cart/', {
+			const res = await fetch(`${API_URL}/api/cart/`, {
 				method: 'GET',
 				headers: {
 					Accept: 'application/json',
 				},
+				mode: 'cors',
+				credentials: 'include',
 			});
 
 			const data: Cart = await res.json();
@@ -120,13 +123,15 @@ export const CartProvider: FC<Props> = ({ children }) => {
 		console.log('Amount: ', amount);
 
 		try {
-			const res = await fetch('/api/cart/', {
+			const res = await fetch(`${API_URL}/api/cart/`, {
 				method: 'POST',
 				headers: {
 					Accept: 'application/json',
 					'Content-Type': 'application/json',
 				},
 				body: body,
+				mode: 'cors',
+				credentials: 'include',
 			});
 
 			const data: Cart = await res.json();
@@ -148,13 +153,15 @@ export const CartProvider: FC<Props> = ({ children }) => {
 		const body = JSON.stringify({ product_id });
 
 		try {
-			const res = await fetch('/api/cart/', {
+			const res = await fetch(`${API_URL}/api/cart/`, {
 				method: 'DELETE',
 				headers: {
 					Accept: 'application/json',
 					'Content-Type': 'application/json',
 				},
 				body: body,
+				mode: 'cors',
+				credentials: 'include',
 			});
 
 			if (res.status === 204) {
