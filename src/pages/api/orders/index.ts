@@ -64,7 +64,6 @@ export default async function handler(
 				headers: {
 					Accept: 'application/json',
 					Authorization: `Bearer ${access}`,
-					Cookie: `sessionid=${sessionid}`,
 				},
 				credentials: 'include',
 				mode: 'cors',
