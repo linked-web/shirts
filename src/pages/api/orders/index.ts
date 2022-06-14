@@ -49,7 +49,8 @@ export default async function handler(
 			});
 		}
 	} else if (req.method === 'POST') {
-		const { access, sessionid } = cookie.parse(req.headers.cookie ?? '');
+		const { access } = cookie.parse(req.headers.cookie ?? '');
+		const { sessionid } = req.cookies;
 
 		if (!access) {
 			return res.status(401).json({
