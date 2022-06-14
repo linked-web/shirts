@@ -32,7 +32,6 @@ const CheckoutPage: NextPage = () => {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
-				// Cookie: '???'
 			},
 		});
 
@@ -40,8 +39,6 @@ const CheckoutPage: NextPage = () => {
 			router.push('/dashboard');
 		}
 	};
-
-	console.log(document.cookie);
 
 	return (
 		<Layout title='Shirts | Checkout' content='Checkout page'>
